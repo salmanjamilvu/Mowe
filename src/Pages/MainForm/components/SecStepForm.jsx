@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import IMG from '../../../assets/Images/CarouselImage.png'
+import IMG2 from '../../../assets/Images/CarouselImage1.jpg'
+import IMG3 from '../../../assets/Images/CarouselImage2.jpg'
+import IMG4 from '../../../assets/Images/CarouselImage3.jpg'
 import { Col, Row, Button } from 'antd';
 
 function SecStepForm({setStep, step}) {
-  const [image, setImag] = useState("")
+  const [image, setImag] = useState(IMG)
   const handleClick = e => {
     setImag(e.target.src)
     localStorage.setItem('userImage', e.target.src);
@@ -22,9 +25,9 @@ function SecStepForm({setStep, step}) {
             <Col span={8}>
               <div className='overflow-y-scroll h-2/5'>
                 <img src={IMG} alt="" className='object-contain	h-auto rounded-lg' onClick={handleClick} />
-                <img src={IMG} alt="" className='object-contain	h-auto rounded-lg mt-3' onClick={handleClick} />
-                <img src={IMG} alt="" className='object-contain	h-auto rounded-lg mt-3' onClick={handleClick} />
-                <img src={IMG} alt="" className='object-contain	h-auto rounded-lg mt-3' onClick={handleClick} />
+                <img src={IMG2} alt="" className='object-contain	h-auto rounded-lg mt-3' onClick={handleClick} />
+                <img src={IMG3} alt="" className='object-contain	h-auto rounded-lg mt-3' onClick={handleClick} />
+                <img src={IMG4} alt="" className='object-contain	h-auto rounded-lg mt-3' onClick={handleClick} />
 
               </div>
             </Col>

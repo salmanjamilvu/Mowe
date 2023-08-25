@@ -12,8 +12,8 @@ const ThirStepForm = ({setStep, step}) => {
   localStorage.setItem('uploadedImage', JSON.stringify(uploadedImage));
   localStorage.setItem('uploadedImage2', JSON.stringify(uploadedImage2));
 
-  localStorage.setItem('selectedVideo', JSON.stringify(selectedVideo));
-  localStorage.setItem('selectedVideo2', JSON.stringify(selectedVideo2));
+  // localStorage.setItem('selectedVideo', JSON.stringify(selectedVideo));
+  // localStorage.setItem('selectedVideo2', JSON.stringify(selectedVideo2));
 
 
   const previousStep = () =>{
