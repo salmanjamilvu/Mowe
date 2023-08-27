@@ -1,24 +1,27 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDropzone } from 'react-dropzone';
 
-const FilesUpload = ({uploadedImage, selectedVideo, setUploadedImage, setSelectedVideo}) => {
-    const [files, setFiles] = useState([]);
+const FilesUpload = ({uploadedFile, setuploadedFile}) => {
+    
     const handleDrop = (acceptedFiles) => {
         acceptedFiles.forEach((file) => {
-          setFiles(acceptedFiles);
           if (file.type.startsWith('image/')) {
-            const firstImage = acceptedFiles.find((file) => file.type.startsWith('image/'));
+            const firstImage = acceptedFiles.find((file) => file.type.startsWith('image/'))
             if (firstImage) {
-              const imageUrl = URL.createObjectURL(firstImage);
-              setSelectedVideo(null);
-              setUploadedImage(imageUrl);
+              const imageUrl = URL.createObjectURL(firstImage)
+              setuploadedFile({
+                image: imageUrl,
+                video: ''
+              })
             }
             
           } else if (file.type.startsWith('video/')) {
             const reader = new FileReader();
             reader.onload = (event) => {
-              setUploadedImage(null);
-              setSelectedVideo(event.target.result);
+              setuploadedFile({
+                image: '',
+                video: event.target.result
+              })
             };
             reader.readAsDataURL(file);
           } 
@@ -27,41 +30,34 @@ const FilesUpload = ({uploadedImage, selectedVideo, setUploadedImage, setSelecte
     
       const { getRootProps, getInputProps } = useDropzone({
         accept: 'image/*, video/*',
+        maxFiles: 1,
         onDrop: handleDrop,
         
       });
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border border-gray-300 rounded-lg">
-            <div {...getRootProps()} className="dropzone">
-              <input {...getInputProps()} />
-              <p className="text-center text-gray-600">
-                Drag 'n' drop some files here, or click to select files
-              </p>
-              <div className="mt-4">
-              {uploadedImage && (
-                <div className="mb-2">
-                  <img src={uploadedImage} alt="Uploaded" className="max-w-full h-40" />
-                </div>
-              )}
-              {selectedVideo && (
-                <div>
-                  <h2 className="text-lg font-semibold mt-4 mb-2">Uploaded Video</h2>
-                  <video controls className="max-w-full h-40">
-                    <source src={selectedVideo} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              )}
+    <div className="max-w-md mx-auto p-2 border border-gray-300 border-dashed rounded-lg">
+      <div {...getRootProps()} className="dropzone">
+        <div className='flex justify-center items-center w-full h-72 rounded-xl bg-contain bg-center bg-no-repeat' style={{backgroundImage: `url(${uploadedFile.image})`}}>
+          <input {...getInputProps()}/>
+          {uploadedFile.video && (
+            <div>
+              <h2 className="text-lg font-semibold mt-4 mb-2">Uploaded Video</h2>
+              <video controls className="max-w-full h-40">
+                <source src={uploadedFile.video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
-            </div>
-            <div className="mt-4">
-              {files.map((file) => (
-                <div key={file.name} className="mb-2">
-                  <p className="text-gray-800">{file.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          )}
+          {uploadedFile.image === '' && uploadedFile.video === '' ? <p className="text-center text-gray-600">
+            Drag and drop. Video max: 15 sec
+          </p> : null}
+          
+        </div>
+        <div className='flex justify-end'>
+          <button className='mt-4 bg-black text-white rounded-full lg:py-3 md:py-2 sm:py-2 lg:px-12 md:px-10 sm:px-6 py-2 px-6'>Cargar</button>
+        </div>
+      </div>
+    </div>
   )
 }
 

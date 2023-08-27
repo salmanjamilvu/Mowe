@@ -15,9 +15,9 @@ const MainForm = () => {
     {step === 4 ?
       <PreviewResult setStep={setStep} step={step} /> :
         step === 6 ? <SecForm  /> : 
-          <div style={{backgroundImage: `url(${BgImg})`}}>
+          <div style={{backgroundImage: `url(${BgImg})`}} className='bg-no-repeat bg-cover'>
             <img src="" alt="" />
-            <div className=' py-60'>
+            <div className=' py-40'>
               {step === 0 ? <FirstSetpForm setStep={setStep} step={step}  /> : null}
               {step === 1 ? <SecStepForm setStep={setStep} step={step} /> : null}
               {step === 2 ? <ThirStepForm setStep={setStep} step={step} /> : null}
