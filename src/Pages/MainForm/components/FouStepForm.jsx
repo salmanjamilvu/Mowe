@@ -21,7 +21,7 @@ const FouStepForm = ({setStep, step}) => {
 
   }
   return (
-    <div className=' bg-transWhite mx-auto rounded-xl md:p-10 sm:p-10 p-5 lg:w-3/5 md:w-3/4 sm:w-4/5 w-11/12'>
+    <div className=' bg-transWhite mx-auto rounded-xl md:p-10 sm:p-10 p-5 lg:w-4/5 md:w-3/4 sm:w-4/5 w-11/12'>
       <div className='container bg-white rounded-xl p-6'>
         <h2 className=' text-2xl font-bold'>Cuéntanos algunos detalles de tu boda!</h2>
         <p className='pb-6'>¿Cómo os llamáis? (Podrás cambiar las fuentes, tamaño y colores más adelante)</p>
@@ -49,7 +49,7 @@ const FouStepForm = ({setStep, step}) => {
               type="time"
               value={userData.time}
               onChange={(e)=>setUserData({...userData, time: e.target.value})}
-              className="custom-time-input focus:outline-none mt-2 ml-5"
+              className="custom-time-input focus:outline-none mt-4 ml-5"
             />
           </div>
 

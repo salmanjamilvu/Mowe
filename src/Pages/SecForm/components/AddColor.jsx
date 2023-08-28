@@ -14,10 +14,10 @@ const AddColor = ({setStep, setSecUserData, secUserData, step}) => {
 
 
   return (
-    <div className='float-right'>
-      <ChromePicker color={color} onChange={handleChange} />
+    <div className='w-full'>
+      <ChromePicker color={color} onChange={handleChange} className=' w-full' />
       <div className=' mt-auto'>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-5 py-4 px-10 rounded-full" onClick={()=>setStep(step+1)}>Next Step</button>
+      <button className="mt-10 bg-lightGreen text-white font-bold rounded-full lg:py-4 md:py-3 sm:py-2 lg:px-16 md:px-12 sm:px-10 py-2 px-10" onClick={()=>setStep(step+1)}>Next Step</button>
       </div>
     </div>
   )

@@ -7,7 +7,7 @@ const FirstSetpForm = ({setStep, step}) => {
         setStep(step+1)
     }
   return (
-    <div className=' bg-transWhite p-5 mx-auto rounded-xl md:p-20 sm:p-10 lg:w-3/5 md:w-3/4 sm:w-4/5 w-11/12'>
+    <div className=' bg-transWhite p-5 mx-auto rounded-xl md:p-20 sm:p-10 lg:w-4/5 md:w-3/4 sm:w-4/5 w-11/12'>
         <div className='container bg-white rounded-xl justify-center flex flex-col md:py-20 sm:p-10 p-10'>
             <div className='text-center'>
                 <div className='flex justify-center mb-8'>

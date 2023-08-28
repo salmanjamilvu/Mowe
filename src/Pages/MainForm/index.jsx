@@ -7,6 +7,7 @@ import FouStepForm from './components/FouStepForm'
 import PreviewResult from '../previewPage/PreviewResult'
 import ComingSoon from './components/ComingSoon'
 import SecForm from '../SecForm'
+import Logo from '../../assets/Svgs/AppLogo.svg'
 
 const MainForm = () => {
   const [step, setStep] = useState(0);
@@ -16,8 +17,10 @@ const MainForm = () => {
       <PreviewResult setStep={setStep} step={step} /> :
         step === 6 ? <SecForm  /> : 
           <div style={{backgroundImage: `url(${BgImg})`}} className='bg-no-repeat bg-cover'>
-            <img src="" alt="" />
-            <div className=' py-40'>
+            <div className='ml-20'>
+            <img src={Logo} alt="" className='w-40' />
+            </div>
+            <div className='pt-8 pb-40'>
               {step === 0 ? <FirstSetpForm setStep={setStep} step={step}  /> : null}
               {step === 1 ? <SecStepForm setStep={setStep} step={step} /> : null}
               {step === 2 ? <ThirStepForm setStep={setStep} step={step} /> : null}

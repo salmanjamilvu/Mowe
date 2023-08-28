@@ -7,7 +7,7 @@ const ComingSoon = ({setStep, step}) => {
 
     const startDate = new Date(`${date}T${time}`);
     const endDate = new Date(); 
-    const timeDifference = endDate - startDate;
+    const timeDifference = startDate - endDate;
 
     const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -22,23 +22,45 @@ const ComingSoon = ({setStep, step}) => {
         setStep(step+1)
       }
   return (
-    <div className=' bg-teal-50 p-8 w-3/5 mx-auto rounded-xl'>
-        <div className='container bg-white rounded-xl justify-center flex flex-col'>
-            <div className='grid grid-cols-2 gap-4'>
-                <div className='p-4'>
-                    <img src={image} alt="" className=' rounded-xl w-full ' />
+    <div className=' bg-transWhite mx-auto rounded-xl md:p-10 sm:p-10 p-5 lg:w-4/5 md:w-3/4 sm:w-4/5 w-11/12'>
+        <div className='container bg-white rounded-xl p-6'>
+            <div className='grid grid-cols-8 gap-5'>
+                <div className='xl:col-span-5 lg:col-span-4 md:col-span-8 sm:col-span-8 col-span-8'>
+                  <div className='w-full'>
+                    <img src={image} alt="" className='rounded-xl w-full' />
+                  </div>
                 </div>
-                <div className='mt-8'>
-                    <h2 className=' font-bold text-6xl text-center'>Coming Soon</h2>
-                    <h3 className=' font-bold text-2xl text-center mt-32'>{`${days}days ${hours}hours ${minutes}minutes ${seconds}seconds`}</h3>
+                <div className='xl:col-span-3 lg:col-span-4 md:col-span-8 sm:col-span-8 col-span-8 relative'>
+                    <h2 className=' font-bold text-4xl '>solo faltan ...</h2>
+                    <div className='flex mt-8'>
+                      <div className='border-r border-gray-500 text-gray-500 px-5'>
+                        <p>{days}</p>
+                        <p>days</p>
+                      </div>
+                      <div className='border-r border-gray-500 text-gray-500 px-5'>
+                        <p>{hours}</p>
+                        <p>hours</p>
+                      </div>
+                      <div className=' border-r border-gray-500 text-gray-500 px-5'>
+                        <p>{minutes}</p>
+                        <p>minutes</p>
+                      </div>
+                      <div className='text-gray-500 px-3'>
+                        <p>{seconds}</p>
+                        <p>seconds</p>
+                      </div>
+                    </div>
+                    <div className='lg:absolute lg:bottom-0 lg:left-0 md:relative'>
+                      <h2 className='text-4xl sm:mt-10 mt-10'>iGuarda la fecha!</h2>
+                    </div>
                 </div>
-                
             </div>
+
         </div>
-        <div className='mt-4'>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-10 py-4 rounded-full" onClick={previousStep}>Previous Step</button>
-          <button className='float-right bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full' onClick={nextStep}>Next Step</button>
-        </div>
+        <div className='flex justify-between mt-4'>
+          <button className="bg-white text-const font-bold rounded-full lg:py-4 md:py-3 sm:py-2 lg:px-16 md:px-12 sm:px-10 py-2 px-10" onClick={previousStep}>Previous Step</button>
+          <button className='bg-lightGreen text-white font-bold rounded-full lg:py-4 md:py-3 sm:py-2 lg:px-16 md:px-12 sm:px-10 py-2 px-10' onClick={nextStep}>Next Step</button>
+      </div>
     </div>
   )
 }

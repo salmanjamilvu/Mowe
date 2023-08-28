@@ -11,14 +11,13 @@ const AddBorder = ({setStep, setSecUserData, secUserData, step}) => {
 }
 return (
 <>
-    <h2 className=' text-center text-3xl'>Add Border</h2>
     <div className='overflow-y-scroll h-4/6 bg-white rounded-xl p-5'>
         <img src={IMG} alt="" className='object-contain h-auto rounded-lg' onClick={handleClick} />
         <img src={IMG2} alt="" className='object-contain	h-auto rounded-lg mt-3' onClick={handleClick} />
         <img src={IMG3} alt="" className='object-contain	h-auto rounded-lg mt-3' onClick={handleClick} />
         <img src={IMG4} alt="" className='object-contain	h-auto rounded-lg mt-3' onClick={handleClick} />
     </div>
-    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-5 py-4 px-10 rounded-full" onClick={()=>setStep(step+1)}>Next Step</button>
+    <button className="mt-10 bg-lightGreen text-white font-bold rounded-full lg:py-4 md:py-3 sm:py-2 lg:px-16 md:px-12 sm:px-10 py-2 px-10" onClick={()=>setStep(step+1)}>Next Step</button>
 </>
 )
 }

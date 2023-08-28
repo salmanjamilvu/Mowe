@@ -32,7 +32,7 @@ const ThirStepForm = ({setStep, step}) => {
 
   }
   return (
-    <div className=' bg-transWhite mx-auto rounded-xl md:p-10 sm:p-10 p-5 lg:w-3/5 md:w-3/4 sm:w-4/5 w-11/12'>
+    <div className=' bg-transWhite mx-auto rounded-xl md:p-10 sm:p-10 p-5 lg:w-4/5 md:w-3/4 sm:w-4/5 w-11/12'>
       <h2 className=' text-2xl font-bold'>Carga tu fotos</h2>
       <p className='pb-6'>Para empezar, vamos a subir 2 vídeos o fotos. El principal se mostrará en la portada de la invitación y el secundario en el apartado “cuenta atrás”. Si no encuentras la foto perfecta, no te preocupes, vas a poder modificarla después.</p>
       <div className='container bg-white rounded-xl p-6'>
