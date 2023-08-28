@@ -17,25 +17,27 @@ const PreviewResult = ({setStep, step}) => {
         setStep(step+1)
       }
   return (
-    <div style={{backgroundImage: `url(${image})`}} className=' w-full h-screen bg-no-repeat bg-cover bg-center'>
-        <div className='container mx-auto pt-20'>
+    <div style={{backgroundImage: `url(${image})`}} className=' w-full bg-no-repeat bg-cover bg-center'>
+        <div className='container mx-auto py-20'>
             <div className="grid grid-cols-12 gap-4">
                 <div className='md:col-span-2 sm:col-span12 col-span-12 mt-16'>
+                    <div className='flex justify-center md:flex-col sm:flex-row flex-row'>
+                        <div className='mx-auto'>
+                            <img src={LocationIcon} alt="" className='bg-black rounded-full p-4 mx-auto' />
+                            <p className='bg-black px-3 py-2 rounded-3xl mx-auto text-white w-fit mt-4'>Ubicacion</p>
+                        </div>
+
+                        <div className='mx-auto md:mt-24 sm:mt-0 mt-0'>
+                            <img src={ClockIcon} alt="" className='bg-black rounded-full p-4 mx-auto' />
+                            <p className='bg-black px-3 py-2 rounded-3xl mx-auto text-white w-fit mt-4'>Countdown</p>
+                        </div>
+
+                        <div className='mx-auto md:mt-24 sm:mt-0 mt-0'>
+                            <img src={DressIcon} alt="" className='bg-black rounded-full p-4 mx-auto' />
+                            <p className='bg-black px-3 py-2 rounded-3xl mx-auto text-white w-fit mt-4'>Dresscode</p>
+                        </div>
+                    </div>
                     
-                    <div className='mx-auto'>
-                        <img src={LocationIcon} alt="" className='bg-black rounded-full p-4 mx-auto' />
-                        <p className='bg-black px-3 py-2 rounded-3xl mx-auto text-white w-fit mt-4'>Ubicacion</p>
-                    </div>
-
-                    <div className='mx-auto mt-24'>
-                        <img src={ClockIcon} alt="" className='bg-black rounded-full p-4 mx-auto' />
-                        <p className='bg-black px-3 py-2 rounded-3xl mx-auto text-white w-fit mt-4'>Countdown</p>
-                    </div>
-
-                    <div className='mx-auto mt-24'>
-                        <img src={DressIcon} alt="" className='bg-black rounded-full p-4 mx-auto' />
-                        <p className='bg-black px-3 py-2 rounded-3xl mx-auto text-white w-fit mt-4'>Dresscode</p>
-                    </div>
                 </div>
                 <div className='md:col-span-8 sm:col-span12 col-span-12'>
                     <div className='text-center text-white'>
@@ -44,24 +46,27 @@ const PreviewResult = ({setStep, step}) => {
                     </div>
                 </div>
                 <div className='md:col-span-2 sm:col-span12 col-span-12 mt-16'>
-                    <div className='mx-auto'>
-                        <img src={GiftIcon} alt="" className='bg-black rounded-full p-4 mx-auto' />
-                        <p className='bg-black px-3 py-2 rounded-3xl mx-auto text-white w-fit mt-4'>Regalo</p>
-                    </div>
+                    <div className='flex justify-center md:flex-col sm:flex-row flex-row'>
+                        <div className='mx-auto'>
+                            <img src={GiftIcon} alt="" className='bg-black rounded-full p-4 mx-auto' />
+                            <p className='bg-black px-3 py-2 rounded-3xl mx-auto text-white w-fit mt-4'>Regalo</p>
+                        </div>
 
-                    <div className='mx-auto mt-24'>
-                        <img src={ShareIcon} alt="" className='bg-black rounded-full p-4 mx-auto' />
-                        <p className='bg-black px-3 py-2 rounded-3xl mx-auto text-white w-fit mt-4'>RRSS</p>
-                    </div>
+                        <div className='mx-auto md:mt-24 sm:mt-0 mt-0'>
+                            <img src={ShareIcon} alt="" className='bg-black rounded-full p-4 mx-auto' />
+                            <p className='bg-black px-3 py-2 rounded-3xl mx-auto text-white w-fit mt-4'>RRSS</p>
+                        </div>
 
-                    <div className='mx-auto mt-24'>
-                        <img src={UserIcon} alt="" className='bg-black rounded-full p-4 mx-auto w-16' />
-                        <p className='bg-black px-3 py-2 rounded-3xl mx-auto text-white w-fit mt-4'>Frrsback</p>
+                        <div className='mx-auto md:mt-24 sm:mt-0 mt-0'>
+                            <img src={UserIcon} alt="" className='bg-black rounded-full p-4 mx-auto w-16' />
+                            <p className='bg-black px-3 py-2 rounded-3xl mx-auto text-white w-fit mt-4'>Frrsback</p>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
 
-            <div className='flex gap-4 justify-center'>
+            <div className='flex gap-4 justify-center mt-8 md:flex-row sm:flex-col flex-col'>
                 <button className="bg-black text-white text-const font-bold rounded-full lg:py-4 md:py-3 sm:py-2 lg:px-16 md:px-12 sm:px-10 py-2 px-10" onClick={previousStep}>Previous Step</button>
                 <button className='bg-lightGreen text-white font-bold rounded-full lg:py-4 md:py-3 sm:py-2 lg:px-16 md:px-12 sm:px-10 py-2 px-10'>Learn more</button>
                 <button className='bg-black text-white text-const font-bold rounded-full lg:py-4 md:py-3 sm:py-2 lg:px-16 md:px-12 sm:px-10 py-2 px-10' onClick={nextStep}>Next Step</button>
