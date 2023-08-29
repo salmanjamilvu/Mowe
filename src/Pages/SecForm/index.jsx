@@ -23,13 +23,13 @@ const SecForm = () => {
                     <div className='lg:w-2/4 lg:mt-32 md:mt-10 sm:mt-10 mt-10'>
                         <div className='rounded-xl p-2' style={{backgroundImage: `url(${secUserData.border})`}}>
                             <div className='py-10 px-8 text-center rounded-xl' style={{backgroundColor: `${color}`}}>
-                                <pre className=' text-white text-2xl'> {secUserData.text} </pre>
+                                <p className=' text-white text-2xl'>{secUserData.text}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className='xl:col-span-3 lg:col-span-4 md:col-span-12 sm:col-span-12 col-span-12 lg:order-none md:order-1 order-1'>
-                    <div className='bg-white rounded-xl px-8 py-7 flex ml-auto mb-12'>
+                    <div className='bg-transWhite rounded-xl px-8 py-7 flex ml-auto mb-12'>
                         <div className='flex gap-7 justify-center text-center mx-auto'>
                             <button onClick={()=> setStep(0)}>Image</button>
                             <button onClick={()=> setStep(1)}>Color</button>

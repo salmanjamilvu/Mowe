@@ -11,7 +11,7 @@ const AddBorder = ({setStep, setSecUserData, secUserData, step}) => {
 }
 return (
 <>
-    <div className='overflow-y-scroll h-4/6 bg-white rounded-xl p-5'>
+    <div className='overflow-y-scroll h-[40rem] bg-white rounded-xl p-5'>
         <img src={IMG} alt="" className='object-contain h-auto rounded-lg' onClick={handleClick} />
         <img src={IMG2} alt="" className='object-contain	h-auto rounded-lg mt-3' onClick={handleClick} />
         <img src={IMG3} alt="" className='object-contain	h-auto rounded-lg mt-3' onClick={handleClick} />
